@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BASE_URL } from '../config';
 
 const Orders = () => {
-  const [orders, setOrders] = useState([]);
 
   /**
    * TODO
    * 1. Create a `fetchOrders` function that retrieves all orders from the database
    * 2. Using the `useEffect` hook, update the existing `orders` state object when `fetchOrders` is complete
    **/ 
+
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    fetechOrders();
+  }, [])
 
 
   return (
